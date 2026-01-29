@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinnacle Consulting | Guiding Businesses to the Peak</title>
+    <meta name="description" content="Pinnacle Consulting helps businesses achieve sustainable growth through strategy, operations, HR, and innovation. Expertise from former top-tier firm partners.">
+    <meta name="keywords" content="management consulting, business strategy, operations optimization, HR advisory, growth solutions, Pinnacle Consulting">
+    <meta name="author" content="Pinnacle Consulting Group">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/mountains-icon.svg">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pinnacle-consulting.example.com/">
+    <meta property="og:title" content="Pinnacle Consulting | Guiding Businesses to the Peak">
+    <meta property="og:description" content="Expert-led business transformation and strategic growth planning. Elevate your organization to its highest potential.">
+    <meta property="og:image" content="images/background.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pinnacle-consulting.example.com/">
+    <meta property="twitter:title" content="Pinnacle Consulting | Guiding Businesses to the Peak">
+    <meta property="twitter:description" content="Expert-led business transformation and strategic growth planning.">
+    <meta property="twitter:image" content="images/background.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#0A2342',
+                        gold: '#FFD700',
+                        silver: '#C0C0C0',
+                        lightGray: '#F3F4F6',
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.6s ease-out forwards',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(10, 35, 66, 0.9) 0%, rgba(192, 192, 192, 0.3) 100%);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "next": "https://esm.sh/next@^16.1.5",
+    "next/": "https://esm.sh/next@^16.1.5/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-white">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
