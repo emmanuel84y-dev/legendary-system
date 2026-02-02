@@ -63,14 +63,13 @@ const Navbar: React.FC = () => {
       >
         <div className="flex flex-col items-center">
           {navLinks.map(link => (
-            <Link
+            <button
               key={link.label}
-              href={link.href}
               onClick={() => handleLinkClick(link.href)}
-              className="w-full text-center py-5 border-b-2 border-gray-100 text-deepBlue text-lg font-medium hover:text-gold transition last:border-0"
+              className="w-full text-center py-5 border-b-2 border-gray-100 text-deepBlue text-lg font-medium hover:text-gold transition last:border-0 bg-white"
             >
               {link.label}
-            </Link>
+            </button>
           ))}
 
           <div className="py-8 w-full flex justify-center bg-gray-50">
