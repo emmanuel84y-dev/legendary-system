@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { GoogleGenerativeAI } from '@google/genai';
 
 export async function POST(request: NextRequest) {
   try {
@@ -12,20 +13,55 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Mock AI response - Replace with actual API call to your AI service
-    // Example: You can integrate with Google Generative AI, OpenAI, etc.
-    const mockStrategies = [
-      `**Strategic Diagnosis:**\n\n1. Root Cause Analysis - Your challenge likely stems from: ${prompt}\n\n2. Key Recommendations:\n   • Implement targeted retention programs\n   • Review compensation structures\n   • Enhance leadership development\n\n3. Action Items:\n   • Conduct exit interviews to understand departures\n   • Create career growth pathways\n   • Establish mentorship programs`,
-      `**Business Opportunity:**\n\nBased on your situation: ${prompt}\n\n**Strategic Approach:**\n1. Assessment - Understand current state\n2. Planning - Develop roadmap\n3. Implementation - Execute with agility\n4. Measurement - Track KPIs\n\n**Expected Outcomes:**\n• 30% efficiency improvement\n• Enhanced market position\n• Sustainable growth trajectory`,
-    ];
+    const apiKey = process.env.GOOGLE_GENAI_API_KEY;
+    if (!apiKey) {
+      console.error('[v0] GOOGLE_GENAI_API_KEY is not set');
+      return NextResponse.json(
+        { error: 'API key is not configured' },
+        { status: 500 }
+      );
+    }
 
-    const result = mockStrategies[Math.floor(Math.random() * mockStrategies.length)];
+    const client = new GoogleGenerativeAI({ apiKey });
+    const model = client.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
-    return NextResponse.json({ result });
+    const systemPrompt = `You are Pinnacle Consulting's AI Strategist Assistant. You provide expert business transformation and strategic growth planning advice based on your deep expertise. 
+    
+Your responses should be:
+- Actionable and specific
+- Based on proven business principles
+- Professional and structured
+- Focused on driving measurable results
+
+Provide your response in a clear, organized format with sections and bullet points when appropriate.`;
+
+    const result = await model.generateContent({
+      contents: [
+        {
+          role: 'user',
+          parts: [
+            {
+              text: `${systemPrompt}\n\nClient Question/Challenge: ${prompt}`,
+            },
+          ],
+        },
+      ],
+      generationConfig: {
+        temperature: 0.7,
+        topP: 0.95,
+        topK: 40,
+        maxOutputTokens: 2048,
+      },
+    });
+
+    const response = result.response;
+    const text = response.text();
+
+    return NextResponse.json({ result: text });
   } catch (error) {
-    console.error('AI Strategist Error:', error);
+    console.error('[v0] AI Strategist Error:', error);
     return NextResponse.json(
-      { error: 'Failed to process request' },
+      { error: 'Failed to process request. Please try again.' },
       { status: 500 }
     );
   }
