@@ -1,6 +1,8 @@
 
 'use client';
 
+import React, { useState } from 'react';
+
 const AIAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
@@ -8,34 +10,34 @@ const AIAssistant: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   const handleGenerate = async () => {
-  if (!input.trim()) return;
+    if (!input.trim()) return;
 
-  setLoading(true);
-  setResponse(null);
+    setLoading(true);
+    setResponse(null);
 
-  try {
-    const res = await fetch('/api/ai-strategist', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        prompt: input,
-      }),
-    });
+    try {
+      const res = await fetch('/api/ai-strategist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          prompt: input,
+        }),
+      });
 
-    if (!res.ok) {
-      throw new Error('Request failed');
+      if (!res.ok) {
+        throw new Error('Request failed');
+      }
+
+      const data = await res.json();
+      setResponse(data.result || 'No response returned.');
+    } catch (error) {
+      setResponse('Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
     }
-
-    const data = await res.json();
-    setResponse(data.result || 'No response returned.');
-  } catch (error) {
-    setResponse('Something went wrong. Please try again.');
-  } finally {
-    setLoading(false);
-  }
-};
+  };
   return (
     <div className="fixed bottom-24 right-8 z-[70] flex flex-col items-end">
       {isOpen && (
