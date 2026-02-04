@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GoogleGenerativeAI } from '@google/genai';
+import { GoogleGenAI } from '@google/genai';
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const client = new GoogleGenerativeAI({ apiKey });
+    const client = new GoogleGenAI({ apiKey });
     const model = client.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
     const systemPrompt = `You are Pinnacle Consulting's AI Strategist Assistant. You provide expert business transformation and strategic growth planning advice based on your deep expertise. 
