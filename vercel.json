@@ -1,8 +1,5 @@
 {
   "buildCommand": "next build",
   "outputDirectory": ".next",
-  "framework": "nextjs",
-  "env": {
-    "GOOGLE_GENAI_API_KEY": "@google_genai_api_key"
-  }
+  "framework": "nextjs"
 }
