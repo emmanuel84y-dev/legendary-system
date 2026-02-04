@@ -22,8 +22,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const client = new GoogleGenAI({ apiKey });
-    const model = client.getGenerativeModel({ model: 'gemini-2.0-flash' });
+    const ai = new GoogleGenAI({ apiKey });
 
     const systemPrompt = `You are Pinnacle Consulting's AI Strategist Assistant. You provide expert business transformation and strategic growth planning advice based on your deep expertise. 
     
@@ -35,18 +34,10 @@ Your responses should be:
 
 Provide your response in a clear, organized format with sections and bullet points when appropriate.`;
 
-    const result = await model.generateContent({
-      contents: [
-        {
-          role: 'user',
-          parts: [
-            {
-              text: `${systemPrompt}\n\nClient Question/Challenge: ${prompt}`,
-            },
-          ],
-        },
-      ],
-      generationConfig: {
+    const response = await ai.models.generateContent({
+      model: 'gemini-2.0-flash',
+      contents: `${systemPrompt}\n\nClient Question/Challenge: ${prompt}`,
+      config: {
         temperature: 0.7,
         topP: 0.95,
         topK: 40,
@@ -54,8 +45,7 @@ Provide your response in a clear, organized format with sections and bullet poin
       },
     });
 
-    const response = result.response;
-    const text = response.text();
+    const text = response.text;
 
     return NextResponse.json({ result: text });
   } catch (error) {
