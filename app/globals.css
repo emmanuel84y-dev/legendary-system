@@ -23,6 +23,18 @@ body {
   color: #1f2937;
 }
 
+/* Image optimization for faster loading */
+img {
+  loading: lazy;
+  decoding: async;
+}
+
+/* Optimize background images */
+[style*="backgroundImage"] {
+  background-size: cover;
+  background-position: center;
+}
+
 .hero-overlay {
   background: linear-gradient(135deg, rgba(10, 35, 66, 0.9) 0%, rgba(192, 192, 192, 0.3) 100%);
 }
