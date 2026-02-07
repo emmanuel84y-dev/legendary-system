@@ -64,6 +64,36 @@ const About: React.FC<AboutProps> = ({ onCtaClick }) => {
             </button>
           </div>
         </div>
+
+        {/* Newsletter Section */}
+        <div className="mt-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="bg-white">
+            <h3 className="text-4xl font-heading font-bold text-deepBlue mb-6">Subscribe Today</h3>
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              Stay informed with our latest insights on business transformation, market trends, and strategic innovation. Join thousands of executives who trust Pinnacle Consulting for actionable intelligence.
+            </p>
+            <button className="bg-deepBlue text-white px-6 py-3 rounded-lg font-bold hover:bg-gold hover:text-deepBlue transition-all duration-300">
+              Read More
+            </button>
+          </div>
+
+          <div className="bg-gradient-to-br from-deepBlue to-deepBlue/80 rounded-3xl p-10 md:p-14 shadow-2xl">
+            <h3 className="text-3xl font-heading font-bold text-white mb-8">Join Newsletter</h3>
+            <form className="space-y-4">
+              <input 
+                type="email" 
+                placeholder="Email" 
+                className="w-full px-6 py-4 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold"
+              />
+              <button 
+                type="submit"
+                className="w-full bg-black text-white py-4 rounded-lg font-bold text-lg hover:bg-gold hover:text-deepBlue transition-all duration-300"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   );

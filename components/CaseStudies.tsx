@@ -1,14 +1,20 @@
 
 import React from 'react';
 import { CASE_STUDIES } from '../data';
+import { useRouter } from 'next/navigation';
 
 interface CaseStudiesProps {
   onViewAll: () => void;
 }
 
 const CaseStudies: React.FC<CaseStudiesProps> = ({ onViewAll }) => {
+  const router = useRouter();
   // Only show first 3 on home
   const featured = CASE_STUDIES.slice(0, 3);
+
+  const handleCaseStudyClick = (caseStudyId: string) => {
+    router.push(`/case-studies?focus=${caseStudyId}`);
+  };
 
   return (
     <section className="py-24 bg-white">
@@ -30,7 +36,7 @@ const CaseStudies: React.FC<CaseStudiesProps> = ({ onViewAll }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featured.map((cs) => (
-            <div key={cs.id} className="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:border-gold/30 transition-all duration-500 flex flex-col">
+            <button key={cs.id} onClick={() => handleCaseStudyClick(cs.id)} className="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:border-gold/30 transition-all duration-500 flex flex-col text-left cursor-pointer hover:scale-105">
               <div className="h-48 overflow-hidden relative">
                  <div className="absolute inset-0 bg-deepBlue/20 group-hover:bg-transparent transition-colors z-10"></div>
                  <img src={cs.image} alt={cs.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
@@ -51,7 +57,7 @@ const CaseStudies: React.FC<CaseStudiesProps> = ({ onViewAll }) => {
                   {cs.description}
                 </p>
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>

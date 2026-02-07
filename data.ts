@@ -94,7 +94,7 @@ export const TEAM: TeamMember[] = [
     name: 'Marcus Thorne',
     role: 'Managing Director',
     bio: 'Former McKinsey partner with 20 years of experience in global supply chain restructuring.',
-    image: '/images/team-marcus.jpg',
+    image: '/images/team-marcus.svg',
     specialty: 'Operational Excellence'
   },
   {
@@ -102,7 +102,7 @@ export const TEAM: TeamMember[] = [
     name: 'Elena Vance',
     role: 'Chief Strategy Officer',
     bio: 'Architect of multiple Fortune 500 market entry strategies across Sub-Saharan Africa and SEA.',
-    image: '/images/team-elena.jpg',
+    image: '/images/team-elena.svg',
     specialty: 'Market Dynamics'
   },
   {
@@ -110,7 +110,7 @@ export const TEAM: TeamMember[] = [
     name: 'David Chen',
     role: 'Director of Operations',
     bio: 'Expert in Lean Six Sigma and automated manufacturing systems with a PhD in Industrial Engineering.',
-    image: '/images/team-david.jpg',
+    image: '/images/team-david.svg',
     specialty: 'Process Automation'
   },
   {
@@ -118,7 +118,7 @@ export const TEAM: TeamMember[] = [
     name: 'Sarah Jenkins',
     role: 'HR Advisory Lead',
     bio: 'Specialist in organizational psychology and high-performance culture design.',
-    image: '/images/team-sarah.jpg',
+    image: '/images/team-sarah.svg',
     specialty: 'Talent Management'
   },
   {
@@ -126,7 +126,7 @@ export const TEAM: TeamMember[] = [
     name: 'Amara Okafor',
     role: 'Innovation Partner',
     bio: 'Leads our Digital Transformation wing, specializing in cloud-native business models.',
-    image: '/images/team-amara.jpg',
+    image: '/images/team-amara.svg',
     specialty: 'Digital Transformation'
   }
 ];
@@ -240,13 +240,67 @@ export const CASE_STUDIES: CaseStudy[] = [
     description: 'An energy major needed to pivot from fossil fuels to renewables to meet investor ESG mandates. We modeled the financial viability of various green energy assets (wind, solar, hydrogen) against future regulatory scenarios. Our strategic roadmap guided the divestment of high-carbon assets and the acquisition of high-yield renewable projects, successfully rebalancing their portfolio by 30% in just 2 years.', 
     icon: 'fa-solar-panel',
     image: '/images/case-6.jpg'
+  },
+  { 
+    id: 'cs7', 
+    title: 'Customer Experience Transformation', 
+    client: 'Global Insurance Provider', 
+    result: '45% NPS Improvement', 
+    description: 'A century-old insurance provider faced customer satisfaction ratings in the bottom quartile of their industry. We conducted a comprehensive customer journey mapping exercise, identifying 47 distinct pain points across digital and physical touchpoints. By redesigning their claims process and deploying AI-powered customer support, we reduced average claim processing time from 21 days to 4 days and increased Net Promoter Score by 45 points within 18 months.', 
+    icon: 'fa-heart-pulse',
+    image: '/images/case-7.jpg'
+  },
+  { 
+    id: 'cs8', 
+    title: 'Vertical Integration Strategy', 
+    client: 'Premium Consumer Goods Co', 
+    result: '$85M Cost Elimination', 
+    description: 'A consumer goods manufacturer was losing margin pressure due to supplier concentration. We evaluated strategic acquisition targets across their value chain and executed a bold vertical integration strategy, bringing 60% of inputs in-house. This move not only reduced supply chain vulnerability but also delivered significant cost savings through economies of scale and reduced intermediary margins.', 
+    icon: 'fa-arrows-alt',
+    image: '/images/case-8.jpg'
+  },
+  { 
+    id: 'cs9', 
+    title: 'Data Monetization Initiative', 
+    client: 'Telecom Giant', 
+    result: '$220M New Revenue Stream', 
+    description: 'A telecommunications company had accumulated massive amounts of customer data but lacked the capability to monetize it responsibly. We developed a comprehensive data commercialization strategy, designing privacy-compliant products for B2B segments while maintaining customer trust. This initiative created an entirely new business unit generating over $220M in annual recurring revenue within two years.', 
+    icon: 'fa-database',
+    image: '/images/case-9.jpg'
+  },
+  { 
+    id: 'cs10', 
+    title: 'Mid-Market Acquisition Enablement', 
+    client: 'Regional Technology Distributor', 
+    result: '5 Successful Acquisitions', 
+    description: 'A technology distributor wanted to grow through acquisition but lacked post-merger integration expertise. We built a comprehensive M&A playbook, provided deal screening capabilities, and managed integration of 5 sequential acquisitions totaling $450M in combined revenue. By applying consistent integration methodologies, we achieved cost synergy targets of 18-22% on each deal while maintaining 90%+ retention of key talent.', 
+    icon: 'fa-handshake',
+    image: '/images/case-10.jpg'
+  },
+  { 
+    id: 'cs11', 
+    title: 'Blockchain Supply Chain Network', 
+    client: 'Pharmaceutical Manufacturer', 
+    result: 'Anti-Counterfeit Verified', 
+    description: 'Counterfeiting cost the pharmaceutical industry billions annually, and our client was losing market share in developing countries due to unverified authenticity concerns. We architected a blockchain-based supply chain network that provided immutable proof of product authenticity while maintaining regulatory compliance across 45+ countries. The solution reduced counterfeit incidence by 94% and increased market penetration in high-risk regions.', 
+    icon: 'fa-link',
+    image: '/images/case-11.jpg'
+  },
+  { 
+    id: 'cs12', 
+    title: 'Sustainability-Linked Financial Restructuring', 
+    client: 'Industrial Equipment Manufacturer', 
+    result: '15% WACC Reduction', 
+    description: 'A legacy manufacturing company wanted to lower their cost of capital while transitioning to sustainable practices. We designed a sustainability-linked financing structure where coupon rates decreased as the company hit ESG milestones. This innovative structure not only reduced their weighted average cost of capital by 150 basis points but also accelerated the company\'s environmental transition, creating positive stakeholder alignment.', 
+    icon: 'fa-leaf',
+    image: '/images/case-12.jpg'
   }
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-  { id: '1', name: 'James R.', role: 'Logistics Director', text: 'Pinnacle Consulting helped us reduce operational costs by 25% while improving efficiency.', image: 'https://picsum.photos/seed/james/100/100' },
-  { id: '2', name: 'Sarah L.', role: 'CEO, Tech Frontier', text: 'Their strategic insights gave us the clarity we needed to expand into new markets.', image: 'https://picsum.photos/seed/sarah/100/100' },
-  { id: '3', name: 'Michael K.', role: 'Operations Head', text: 'A game-changer for our supply chain management. Professional and results-oriented.', image: 'https://picsum.photos/seed/michael/100/100' }
+  { id: '1', name: 'James R.', role: 'Logistics Director', text: 'Pinnacle Consulting helped us reduce operational costs by 25% while improving efficiency.', image: '/images/testimonial-james.svg' },
+  { id: '2', name: 'Sarah L.', role: 'CEO, Tech Frontier', text: 'Their strategic insights gave us the clarity we needed to expand into new markets.', image: '/images/testimonial-sarah.svg' },
+  { id: '3', name: 'Michael K.', role: 'Operations Head', text: 'A game-changer for our supply chain management. Professional and results-oriented.', image: '/images/testimonial-michael.svg' }
 ];
 
 export const METRICS: Metric[] = [

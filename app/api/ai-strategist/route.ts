@@ -50,8 +50,9 @@ Provide your response in a clear, organized format with sections and bullet poin
     return NextResponse.json({ result: text });
   } catch (error) {
     console.error('[v0] AI Strategist Error:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Failed to process request';
     return NextResponse.json(
-      { error: 'Failed to process request. Please try again.' },
+      { error: `AI Service Error: ${errorMessage}` },
       { status: 500 }
     );
   }

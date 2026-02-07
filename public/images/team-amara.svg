@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 350" width="300" height="350">
+  <rect width="300" height="350" fill="#E8E8E8"/>
+  <circle cx="150" cy="110" r="45" fill="#8B6F47"/>
+  <path d="M 80 180 Q 150 160, 220 180 L 220 350 L 80 350 Z" fill="#B8956F"/>
+  <circle cx="130" cy="95" r="10" fill="#3F3F3F"/>
+  <circle cx="170" cy="95" r="10" fill="#3F3F3F"/>
+  <path d="M 140 125 L 160 125" stroke="#333" stroke-width="2"/>
+  <!-- Natural textured hair representation -->
+  <circle cx="150" cy="65" r="20" fill="#6B5A47" opacity="0.7"/>
+</svg>

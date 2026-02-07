@@ -1,11 +1,19 @@
 
 'use client';
 
-import React from 'react';
-import CaseStudiesView from '../../components/CaseStudiesView';
+import React, { Suspense } from 'react';
+import CaseStudiesClient from '../../components/CaseStudiesClient';
 import { useRouter } from 'next/navigation';
 
-export default function CaseStudiesPage() {
+function CaseStudiesContent() {
   const router = useRouter();
-  return <CaseStudiesView onGoBack={() => router.push('/')} />;
+  return <CaseStudiesClient onGoBack={() => router.back()} />;
+}
+
+export default function CaseStudiesPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen pt-32 pb-24 flex items-center justify-center"><p className="text-gray-600">Loading case studies...</p></div>}>
+      <CaseStudiesContent />
+    </Suspense>
+  );
 }

@@ -57,15 +57,15 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Toggle - Larger with smooth transition */}
+        {/* Mobile Toggle - Custom Hamburger Button */}
         <button 
           onClick={toggleMenu} 
-          className="md:hidden text-deepBlue text-4xl transition-transform duration-300"
+          className="md:hidden w-10 h-10 flex flex-col justify-center items-center space-y-1.5 group"
           aria-label="Toggle menu"
         >
-          <span className={`inline-block transition-transform duration-300 ${isOpen ? 'rotate-90' : 'rotate-0'}`}>
-            ☰
-          </span>
+          <span className={`block w-6 h-0.5 bg-deepBlue rounded-sm transition-all duration-300 origin-center ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-deepBlue rounded-sm transition-all duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+          <span className={`block w-6 h-0.5 bg-deepBlue rounded-sm transition-all duration-300 origin-center ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
         </button>
       </div>
 
