@@ -58,36 +58,42 @@ const Insights: React.FC<InsightsProps> = ({ onOpenArticle }) => {
           ))}
         </div>
 
-        {/* Newsletter Enhancement */}
+        {/* Newsletter Section */}
         <div className="mt-20 relative z-10">
-          <div className="bg-deepBlue rounded-[2rem] p-8 md:p-12 md:flex justify-between items-center shadow-2xl border border-white/10">
-            <div className="text-left mb-8 md:mb-0 max-w-lg">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Stay Ahead with <span className="text-gold italic">Pinnacle Insights</span></h3>
-              <p className="text-silver text-lg leading-relaxed">Join 5,000+ executives receiving our weekly strategy notes directly in their inbox.</p>
-            </div>
-            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row w-full md:w-auto gap-4">
-              <input 
-                type="email" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your professional email" 
-                className="px-6 py-4 rounded-xl outline-none text-deepBlue w-full md:w-80 focus:ring-4 focus:ring-gold/30 transition shadow-inner"
-                required
-              />
-              <button 
-                type="submit"
-                disabled={isSubscribed}
-                className={`px-8 py-4 font-bold rounded-xl transition-all shadow-lg whitespace-nowrap active:scale-95 ${
-                  isSubscribed ? 'bg-green-500 text-white' : 'bg-gold text-deepBlue hover:bg-white'
-                }`}
-              >
-                {isSubscribed ? 'Subscribed!' : 'Join the Network'}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="bg-white">
+              <h3 className="text-4xl font-heading font-bold text-deepBlue mb-6">Subscribe Today</h3>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Stay informed with our latest insights on business transformation, market trends, and strategic innovation. Join thousands of executives who trust Pinnacle Consulting for actionable intelligence.
+              </p>
+              <button className="mt-8 bg-deepBlue text-white px-6 py-3 rounded-lg font-bold hover:bg-gold hover:text-deepBlue transition-all duration-300">
+                Read More
               </button>
-            </form>
+            </div>
+
+            <div className="bg-gradient-to-br from-deepBlue to-deepBlue/80 rounded-3xl p-10 md:p-14 shadow-2xl">
+              <h3 className="text-3xl font-heading font-bold text-white mb-8">Join Newsletter</h3>
+              <form onSubmit={handleSubscribe} className="space-y-4">
+                <input 
+                  type="email" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email" 
+                  className="w-full px-6 py-4 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold"
+                  required
+                />
+                <button 
+                  type="submit"
+                  disabled={isSubscribed}
+                  className={`w-full py-4 rounded-lg font-bold text-lg transition-all duration-300 ${
+                    isSubscribed ? 'bg-green-500 text-white' : 'bg-black text-white hover:bg-gold hover:text-deepBlue'
+                  }`}
+                >
+                  {isSubscribed ? 'Subscribed!' : 'Subscribe'}
+                </button>
+              </form>
+            </div>
           </div>
-          {/* Decorative element */}
-          <div className="absolute -top-10 -right-10 w-64 h-64 bg-gold/5 rounded-full blur-3xl -z-10"></div>
-          <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-deepBlue/5 rounded-full blur-3xl -z-10"></div>
         </div>
       </div>
     </section>

@@ -62,12 +62,12 @@ const CaseStudiesView: React.FC<CaseStudiesViewProps> = ({ onGoBack, focusId }) 
                 
                 <h3 className="text-3xl font-heading font-bold text-deepBlue mb-4">{cs.title}</h3>
                 
-                <div className="bg-lightGray rounded-xl p-4 mb-6 inline-block w-max">
+                <div className="bg-lightGray rounded-xl p-4 mb-6 inline-block w-full md:w-max">
                   <span className="text-xs text-gray-500 uppercase font-bold tracking-wider block mb-1">Key Outcome</span>
-                  <span className="text-xl font-extrabold text-deepBlue">{cs.result}</span>
+                  <span className="text-xl font-extrabold text-deepBlue break-words">{cs.result}</span>
                 </div>
                 
-                <p className="text-gray-600 leading-relaxed text-lg">
+                <p className="text-gray-600 leading-relaxed text-sm">
                   {cs.description}
                 </p>
               </div>

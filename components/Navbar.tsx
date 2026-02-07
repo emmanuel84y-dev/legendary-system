@@ -15,7 +15,15 @@ const Navbar: React.FC = () => {
 
   const handleLinkClick = (href: string) => {
     setIsOpen(false);
-    if (pathname !== href) {
+    if (pathname === '/' && href.startsWith('/#')) {
+      // On home page, scroll to section
+      const sectionId = href.substring(2);
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (pathname !== href) {
+      // Navigate to different page
       router.push(href);
     }
   };

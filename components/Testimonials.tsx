@@ -25,7 +25,7 @@ const Testimonials: React.FC = () => {
         <h4 className="text-gold font-bold uppercase tracking-widest text-sm mb-2">Proven Results</h4>
         <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-8">Voice of the Summit</h2>
 
-        <div className="max-w-4xl mx-auto mb-20 min-h-[300px] flex items-center justify-center">
+        <div className="max-w-4xl mx-auto mb-20 mt-8 min-h-[300px] flex items-center justify-center">
           <div className="relative w-full">
             {TESTIMONIALS.map((t, idx) => (
               <div 
@@ -78,9 +78,14 @@ const Testimonials: React.FC = () => {
         {/* Client Logos */}
         <div className="pt-16 border-t border-white/10">
           <p className="text-silver font-bold uppercase tracking-widest text-xs mb-10">Trusted by Market Titans</p>
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
-            {CLIENT_LOGOS.map((logo) => (
-              <div key={logo.name} className="flex items-center gap-3 text-2xl md:text-3xl font-bold text-white group cursor-default">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-10 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-700 max-w-2xl mx-auto">
+            {CLIENT_LOGOS.map((logo, idx) => (
+              <div 
+                key={logo.name} 
+                className={`flex items-center justify-center gap-3 text-2xl md:text-3xl font-bold text-white group cursor-default ${
+                  idx === CLIENT_LOGOS.length - 1 && CLIENT_LOGOS.length % 2 === 1 ? 'col-span-2 md:col-span-1 md:col-start-2' : ''
+                }`}
+              >
                 <i className={`fab ${logo.icon} text-4xl group-hover:text-gold transition-colors`}></i>
                 <span className="group-hover:text-gold transition-colors">{logo.name}</span>
               </div>

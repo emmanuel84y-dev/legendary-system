@@ -94,7 +94,7 @@ export const TEAM: TeamMember[] = [
     name: 'Marcus Thorne',
     role: 'Managing Director',
     bio: 'Former McKinsey partner with 20 years of experience in global supply chain restructuring.',
-    image: '/images/team-marcus.svg',
+    image: '/images/team-marcus.jpg',
     specialty: 'Operational Excellence'
   },
   {
@@ -102,7 +102,7 @@ export const TEAM: TeamMember[] = [
     name: 'Elena Vance',
     role: 'Chief Strategy Officer',
     bio: 'Architect of multiple Fortune 500 market entry strategies across Sub-Saharan Africa and SEA.',
-    image: '/images/team-elena.svg',
+    image: '/images/team-elena.jpg',
     specialty: 'Market Dynamics'
   },
   {
@@ -110,7 +110,7 @@ export const TEAM: TeamMember[] = [
     name: 'David Chen',
     role: 'Director of Operations',
     bio: 'Expert in Lean Six Sigma and automated manufacturing systems with a PhD in Industrial Engineering.',
-    image: '/images/team-david.svg',
+    image: '/images/team-david.jpg',
     specialty: 'Process Automation'
   },
   {
@@ -118,7 +118,7 @@ export const TEAM: TeamMember[] = [
     name: 'Sarah Jenkins',
     role: 'HR Advisory Lead',
     bio: 'Specialist in organizational psychology and high-performance culture design.',
-    image: '/images/team-sarah.svg',
+    image: '/images/team-sarah.jpg',
     specialty: 'Talent Management'
   },
   {
@@ -126,8 +126,16 @@ export const TEAM: TeamMember[] = [
     name: 'Amara Okafor',
     role: 'Innovation Partner',
     bio: 'Leads our Digital Transformation wing, specializing in cloud-native business models.',
-    image: '/images/team-amara.svg',
+    image: '/images/team-amara.jpg',
     specialty: 'Digital Transformation'
+  },
+  {
+    id: 't6',
+    name: 'Christopher Hayes',
+    role: 'Senior Advisor',
+    bio: 'Former board member of multiple Fortune 500 companies with expertise in corporate governance and executive compensation.',
+    image: '/images/team-christopher.jpg',
+    specialty: 'Corporate Governance'
   }
 ];
 
@@ -248,7 +256,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     result: '45% NPS Improvement', 
     description: 'A century-old insurance provider faced customer satisfaction ratings in the bottom quartile of their industry. We conducted a comprehensive customer journey mapping exercise, identifying 47 distinct pain points across digital and physical touchpoints. By redesigning their claims process and deploying AI-powered customer support, we reduced average claim processing time from 21 days to 4 days and increased Net Promoter Score by 45 points within 18 months.', 
     icon: 'fa-heart-pulse',
-    image: '/images/case-7.jpg'
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop'
   },
   { 
     id: 'cs8', 
@@ -284,7 +292,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     result: 'Anti-Counterfeit Verified', 
     description: 'Counterfeiting cost the pharmaceutical industry billions annually, and our client was losing market share in developing countries due to unverified authenticity concerns. We architected a blockchain-based supply chain network that provided immutable proof of product authenticity while maintaining regulatory compliance across 45+ countries. The solution reduced counterfeit incidence by 94% and increased market penetration in high-risk regions.', 
     icon: 'fa-link',
-    image: '/images/case-11.jpg'
+    image: 'https://images.unsplash.com/photo-1563986768609-7fa38ff12b23?w=400&h=400&fit=crop'
   },
   { 
     id: 'cs12', 
@@ -298,9 +306,9 @@ export const CASE_STUDIES: CaseStudy[] = [
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-  { id: '1', name: 'James R.', role: 'Logistics Director', text: 'Pinnacle Consulting helped us reduce operational costs by 25% while improving efficiency.', image: '/images/testimonial-james.svg' },
-  { id: '2', name: 'Sarah L.', role: 'CEO, Tech Frontier', text: 'Their strategic insights gave us the clarity we needed to expand into new markets.', image: '/images/testimonial-sarah.svg' },
-  { id: '3', name: 'Michael K.', role: 'Operations Head', text: 'A game-changer for our supply chain management. Professional and results-oriented.', image: '/images/testimonial-michael.svg' }
+  { id: '1', name: 'James R.', role: 'Logistics Director', text: 'Pinnacle Consulting helped us reduce operational costs by 25% while improving efficiency.', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&q=80' },
+  { id: '2', name: 'Sarah L.', role: 'CEO, Tech Frontier', text: 'Their strategic insights gave us the clarity we needed to expand into new markets.', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&q=80' },
+  { id: '3', name: 'Michael K.', role: 'Operations Head', text: 'A game-changer for our supply chain management. Professional and results-oriented.', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&q=80' }
 ];
 
 export const METRICS: Metric[] = [
