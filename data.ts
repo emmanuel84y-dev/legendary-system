@@ -94,7 +94,7 @@ export const TEAM: TeamMember[] = [
     name: 'Marcus Thorne',
     role: 'Managing Director',
     bio: 'Former McKinsey partner with 20 years of experience in global supply chain restructuring.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop',
+    image: '/images/team-marcus.jpg',
     specialty: 'Operational Excellence'
   },
   {
@@ -102,7 +102,7 @@ export const TEAM: TeamMember[] = [
     name: 'Elena Vance',
     role: 'Chief Strategy Officer',
     bio: 'Architect of multiple Fortune 500 market entry strategies across Sub-Saharan Africa and SEA.',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop',
+    image: '/images/team-elena.jpg',
     specialty: 'Market Dynamics'
   },
   {
@@ -110,7 +110,7 @@ export const TEAM: TeamMember[] = [
     name: 'David Chen',
     role: 'Director of Operations',
     bio: 'Expert in Lean Six Sigma and automated manufacturing systems with a PhD in Industrial Engineering.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop',
+    image: '/images/team-david.jpg',
     specialty: 'Process Automation'
   },
   {
@@ -118,7 +118,7 @@ export const TEAM: TeamMember[] = [
     name: 'Sarah Jenkins',
     role: 'HR Advisory Lead',
     bio: 'Specialist in organizational psychology and high-performance culture design.',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop',
+    image: '/images/team-sarah.jpg',
     specialty: 'Talent Management'
   },
   {
@@ -126,7 +126,7 @@ export const TEAM: TeamMember[] = [
     name: 'Amara Okafor',
     role: 'Innovation Partner',
     bio: 'Leads our Digital Transformation wing, specializing in cloud-native business models.',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop',
+    image: '/images/team-amara.jpg',
     specialty: 'Digital Transformation'
   },
   {
@@ -134,7 +134,7 @@ export const TEAM: TeamMember[] = [
     name: 'Christopher Hayes',
     role: 'Senior Advisor',
     bio: 'Former board member of multiple Fortune 500 companies with expertise in corporate governance and executive compensation.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop',
+    image: '/images/team-christopher.jpg',
     specialty: 'Corporate Governance'
   }
 ];
@@ -306,9 +306,9 @@ export const CASE_STUDIES: CaseStudy[] = [
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-  { id: '1', name: 'James R.', role: 'Logistics Director', text: 'Pinnacle Consulting helped us reduce operational costs by 25% while improving efficiency.', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop' },
-  { id: '2', name: 'Sarah L.', role: 'CEO, Tech Frontier', text: 'Their strategic insights gave us the clarity we needed to expand into new markets.', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop' },
-  { id: '3', name: 'Michael K.', role: 'Operations Head', text: 'A game-changer for our supply chain management. Professional and results-oriented.', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop' }
+  { id: '1', name: 'James R.', role: 'Logistics Director', text: 'Pinnacle Consulting helped us reduce operational costs by 25% while improving efficiency.', image: 'https://picsum.photos/id/33/100/100' },
+  { id: '2', name: 'Sarah L.', role: 'CEO, Tech Frontier', text: 'Their strategic insights gave us the clarity we needed to expand into new markets.', image: 'https://picsum.photos/id/47/100/100' },
+  { id: '3', name: 'Michael K.', role: 'Operations Head', text: 'A game-changer for our supply chain management. Professional and results-oriented.', image: 'https://picsum.photos/id/12/100/100' }
 ];
 
 export const METRICS: Metric[] = [

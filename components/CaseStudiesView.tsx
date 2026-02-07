@@ -27,8 +27,8 @@ const CaseStudiesView: React.FC<CaseStudiesViewProps> = ({ onGoBack, focusId }) 
         </button>
 
         <div className="mb-20">
-          <h1 className="text-3xl md:text-5xl font-heading font-extrabold text-deepBlue mb-6">Proven <span className="text-gold">Results</span></h1>
-          <p className="text-base md:text-xl text-gray-600 max-w-2xl">A comprehensive portfolio of transformations across the global business landscape.</p>
+          <h1 className="text-5xl font-heading font-extrabold text-deepBlue mb-6">Proven <span className="text-gold">Results</span></h1>
+          <p className="text-xl text-gray-600 max-w-2xl">A comprehensive portfolio of transformations across the global business landscape.</p>
         </div>
 
         <div className="space-y-16">
@@ -60,14 +60,14 @@ const CaseStudiesView: React.FC<CaseStudiesViewProps> = ({ onGoBack, focusId }) 
                   <span className="text-gold font-bold uppercase tracking-widest text-xs">{cs.client}</span>
                 </div>
                 
-                <h3 className="text-2xl md:text-3xl font-heading font-bold text-deepBlue mb-4">{cs.title}</h3>
+                <h3 className="text-3xl font-heading font-bold text-deepBlue mb-4">{cs.title}</h3>
                 
                 <div className="bg-lightGray rounded-xl p-4 mb-6 inline-block w-full md:w-max">
                   <span className="text-xs text-gray-500 uppercase font-bold tracking-wider block mb-1">Key Outcome</span>
-                  <span className="text-lg md:text-xl font-extrabold text-deepBlue break-words">{cs.result}</span>
+                  <span className="text-xl font-extrabold text-deepBlue break-words">{cs.result}</span>
                 </div>
                 
-                <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                <p className="text-gray-600 leading-relaxed text-sm">
                   {cs.description}
                 </p>
               </div>

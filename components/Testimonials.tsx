@@ -25,7 +25,7 @@ const Testimonials: React.FC = () => {
         <h4 className="text-gold font-bold uppercase tracking-widest text-sm mb-2">Proven Results</h4>
         <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-8">Voice of the Summit</h2>
 
-        <div className="max-w-4xl mx-auto mb-20 min-h-[300px] flex items-center justify-center">
+        <div className="max-w-4xl mx-auto mb-20 mt-8 min-h-[300px] flex items-center justify-center">
           <div className="relative w-full">
             {TESTIMONIALS.map((t, idx) => (
               <div 
