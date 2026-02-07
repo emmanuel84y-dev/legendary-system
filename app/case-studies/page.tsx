@@ -7,5 +7,5 @@ import { useRouter } from 'next/navigation';
 
 export default function CaseStudiesPage() {
   const router = useRouter();
-  return <CaseStudiesView onGoBack={() => router.push('/')} />;
+  return <CaseStudiesView onGoBack={() => router.back()} />;
 }

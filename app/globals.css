@@ -38,3 +38,35 @@ img {
 .hero-overlay {
   background: linear-gradient(135deg, rgba(10, 35, 66, 0.9) 0%, rgba(192, 192, 192, 0.3) 100%);
 }
+
+/* Faster page transitions and animations */
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Reduce transition timing for snappier feel */
+* {
+  --transition-duration: 150ms;
+}
+
+/* GPU acceleration for smooth animations */
+html,
+body,
+main {
+  will-change: auto;
+}
+
+/* Optimize repaints */
+[class*="transition"] {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}

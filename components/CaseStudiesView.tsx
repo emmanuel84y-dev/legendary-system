@@ -1,12 +1,26 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { CASE_STUDIES } from '../data';
+import { useSearchParams } from 'next/navigation';
 
 interface CaseStudiesViewProps {
   onGoBack: () => void;
 }
 
 const CaseStudiesView: React.FC<CaseStudiesViewProps> = ({ onGoBack }) => {
+  const searchParams = useSearchParams();
+  const focusId = searchParams.get('focus');
+  const focusRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (focusId && focusRef.current) {
+      setTimeout(() => {
+        focusRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    }
+  }, [focusId]);
+
   return (
     <div className="min-h-screen bg-lightGray pt-32 pb-24 animate-fade-in">
       <div className="max-w-7xl mx-auto px-6">
@@ -21,14 +35,21 @@ const CaseStudiesView: React.FC<CaseStudiesViewProps> = ({ onGoBack }) => {
 
         <div className="space-y-16">
           {CASE_STUDIES.map((cs, index) => (
-            <div key={cs.id} className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} bg-white rounded-[2.5rem] shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300`}>
+            <div 
+              key={cs.id} 
+              ref={focusId === cs.id ? focusRef : null}
+              className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} bg-white rounded-[2.5rem] shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 ${focusId === cs.id ? 'ring-2 ring-gold shadow-2xl' : ''}`}
+            >
               {/* Image Section */}
               <div className="w-full lg:w-2/5 h-64 lg:h-auto relative overflow-hidden group">
                 <div className="absolute inset-0 bg-deepBlue/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                <img 
+                <Image 
                   src={cs.image} 
-                  alt={cs.title} 
+                  alt={cs.title}
+                  width={400}
+                  height={400}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
                 />
               </div>
 

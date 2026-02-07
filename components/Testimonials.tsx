@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { TESTIMONIALS, CLIENT_LOGOS } from '../data';
 
 const Testimonials: React.FC = () => {
@@ -22,7 +23,7 @@ const Testimonials: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
         <h4 className="text-gold font-bold uppercase tracking-widest text-sm mb-2">Proven Results</h4>
-        <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-16">Voice of the Summit</h2>
+        <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-8">Voice of the Summit</h2>
 
         <div className="max-w-4xl mx-auto mb-20 min-h-[300px] flex items-center justify-center">
           <div className="relative w-full">
@@ -41,10 +42,13 @@ const Testimonials: React.FC = () => {
                     "{t.text}"
                   </p>
                   <div className="flex items-center justify-center space-x-5">
-                    <img 
+                    <Image 
                       src={t.image} 
-                      alt={t.name} 
-                      className="w-16 h-16 rounded-full border-2 border-gold object-cover shadow-lg"
+                      alt={t.name}
+                      width={64}
+                      height={64}
+                      className="rounded-full border-2 border-gold object-cover shadow-lg"
+                      loading="lazy"
                     />
                     <div className="text-left">
                       <h4 className="font-bold text-lg text-white">{t.name}</h4>
