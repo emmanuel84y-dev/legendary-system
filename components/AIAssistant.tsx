@@ -31,9 +31,14 @@ const AIAssistant: React.FC = () => {
       }
 
       const data = await res.json();
-      setResponse(data.result || 'No response returned.');
+      if (data.error) {
+        setResponse(`Error: ${data.error}`);
+      } else {
+        setResponse(data.result || 'No response returned.');
+      }
     } catch (error) {
-      setResponse('Something went wrong. Please try again.');
+      console.error('[v0] AI Assistant Error:', error);
+      setResponse('Network error: Unable to reach the AI service. Please check your connection and try again.');
     } finally {
       setLoading(false);
     }
