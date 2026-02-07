@@ -45,7 +45,7 @@ Provide your response in a clear, organized format with sections and bullet poin
       },
     });
 
-    const text = response.text();
+    const text = response.text;
 
     return NextResponse.json({ result: text });
   } catch (error) {
