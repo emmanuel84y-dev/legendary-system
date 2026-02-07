@@ -2,15 +2,13 @@
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { CASE_STUDIES } from '../data';
-import { useSearchParams } from 'next/navigation';
 
 interface CaseStudiesViewProps {
   onGoBack: () => void;
+  focusId?: string | null;
 }
 
-const CaseStudiesView: React.FC<CaseStudiesViewProps> = ({ onGoBack }) => {
-  const searchParams = useSearchParams();
-  const focusId = searchParams.get('focus');
+const CaseStudiesView: React.FC<CaseStudiesViewProps> = ({ onGoBack, focusId }) => {
   const focusRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
