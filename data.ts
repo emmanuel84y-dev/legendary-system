@@ -292,7 +292,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     result: 'Anti-Counterfeit Verified', 
     description: 'Counterfeiting cost the pharmaceutical industry billions annually, and our client was losing market share in developing countries due to unverified authenticity concerns. We architected a blockchain-based supply chain network that provided immutable proof of product authenticity while maintaining regulatory compliance across 45+ countries. The solution reduced counterfeit incidence by 94% and increased market penetration in high-risk regions.', 
     icon: 'fa-link',
-    image: 'https://images.unsplash.com/photo-1639524063849-79dbde3df38f?w=400&h=400&fit=crop'
+    image: 'https://images.unsplash.com/photo-1563986768609-7fa38ff12b23?w=400&h=400&fit=crop'
   },
   { 
     id: 'cs12', 
@@ -306,9 +306,9 @@ export const CASE_STUDIES: CaseStudy[] = [
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-  { id: '1', name: 'James R.', role: 'Logistics Director', text: 'Pinnacle Consulting helped us reduce operational costs by 25% while improving efficiency.', image: 'https://picsum.photos/id/33/100/100' },
-  { id: '2', name: 'Sarah L.', role: 'CEO, Tech Frontier', text: 'Their strategic insights gave us the clarity we needed to expand into new markets.', image: 'https://picsum.photos/id/47/100/100' },
-  { id: '3', name: 'Michael K.', role: 'Operations Head', text: 'A game-changer for our supply chain management. Professional and results-oriented.', image: 'https://picsum.photos/id/12/100/100' }
+  { id: '1', name: 'James R.', role: 'Logistics Director', text: 'Pinnacle Consulting helped us reduce operational costs by 25% while improving efficiency.', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&q=80' },
+  { id: '2', name: 'Sarah L.', role: 'CEO, Tech Frontier', text: 'Their strategic insights gave us the clarity we needed to expand into new markets.', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&q=80' },
+  { id: '3', name: 'Michael K.', role: 'Operations Head', text: 'A game-changer for our supply chain management. Professional and results-oriented.', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&q=80' }
 ];
 
 export const METRICS: Metric[] = [
