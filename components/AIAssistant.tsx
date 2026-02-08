@@ -1,13 +1,17 @@
 
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const AIAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [response, setResponse] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleGenerate = async () => {
     if (!input.trim()) return;
@@ -16,6 +20,8 @@ const AIAssistant: React.FC = () => {
     setResponse(null);
 
     try {
+      console.log('[v0] Sending request to /api/ai-strategist with prompt:', input);
+      
       const res = await fetch('/api/ai-strategist', {
         method: 'POST',
         headers: {
@@ -26,19 +32,26 @@ const AIAssistant: React.FC = () => {
         }),
       });
 
+      console.log('[v0] Response status:', res.status);
+
       if (!res.ok) {
-        throw new Error('Request failed');
+        const errorText = await res.text();
+        console.error('[v0] Response not OK:', res.status, errorText);
+        throw new Error(`API returned ${res.status}: ${errorText}`);
       }
 
       const data = await res.json();
+      console.log('[v0] Response data:', data);
+      
       if (data.error) {
         setResponse(`Error: ${data.error}`);
       } else {
         setResponse(data.result || 'No response returned.');
       }
     } catch (error) {
-      console.error('[v0] AI Assistant Error:', error);
-      setResponse('Network error: Unable to reach the AI service. Please check your connection and try again.');
+      const errorMsg = error instanceof Error ? error.message : String(error);
+      console.error('[v0] AI Assistant Error:', errorMsg);
+      setResponse(`Error: ${errorMsg}`);
     } finally {
       setLoading(false);
     }
@@ -112,6 +125,15 @@ const AIAssistant: React.FC = () => {
         aria-label="Toggle AI Assistant"
       >
         <i className={`fas ${isOpen ? 'fa-times' : 'fa-brain'} text-2xl`}></i>
+      </button>
+
+      <button
+        onClick={scrollToTop}
+        className="w-14 h-14 md:w-16 md:h-16 bg-gold text-deepBlue rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 active:scale-95 active:bg-deepBlue active:text-gold z-50 mt-4"
+        aria-label="Back to top"
+        title="Back to top"
+      >
+        <i className="fas fa-arrow-up text-2xl"></i>
       </button>
     </div>
   );

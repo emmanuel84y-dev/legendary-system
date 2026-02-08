@@ -66,9 +66,6 @@ const Insights: React.FC<InsightsProps> = ({ onOpenArticle }) => {
               <p className="text-lg text-gray-600 leading-relaxed">
                 Stay informed with our latest insights on business transformation, market trends, and strategic innovation. Join thousands of executives who trust Pinnacle Consulting for actionable intelligence.
               </p>
-              <button className="mt-8 bg-deepBlue text-white px-6 py-3 rounded-lg font-bold hover:bg-gold hover:text-deepBlue transition-all duration-300">
-                Read More
-              </button>
             </div>
 
             <div className="bg-gradient-to-br from-deepBlue to-deepBlue/80 rounded-3xl p-10 md:p-14 shadow-2xl">
