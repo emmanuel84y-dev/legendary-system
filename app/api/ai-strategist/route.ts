@@ -34,6 +34,8 @@ Your responses should be:
 
 Provide your response in a clear, organized format with sections and bullet points when appropriate.`;
 
+    console.log('[v0] Calling Gemini API with prompt:', prompt);
+    
     const response = await ai.models.generateContent({
       model: 'gemini-2.0-flash',
       contents: `${systemPrompt}\n\nClient Question/Challenge: ${prompt}`,
@@ -45,9 +47,21 @@ Provide your response in a clear, organized format with sections and bullet poin
       },
     });
 
-    // Extract text from response - the response object structure from GoogleGenAI
-    const text = response.text || response.candidates?.[0]?.content?.parts?.[0]?.text || 'No response generated';
+    console.log('[v0] Gemini response received:', JSON.stringify(response, null, 2));
 
+    // Extract text from response - handle multiple possible structures
+    let text = '';
+    if (typeof response.text === 'string') {
+      text = response.text;
+    } else if (typeof response.text === 'function') {
+      text = response.text();
+    } else if (response.candidates?.[0]?.content?.parts?.[0]?.text) {
+      text = response.candidates[0].content.parts[0].text;
+    } else {
+      text = 'No response generated';
+    }
+
+    console.log('[v0] Extracted text:', text);
     return NextResponse.json({ result: text });
   } catch (error) {
     console.error('[v0] AI Strategist Error:', error);
