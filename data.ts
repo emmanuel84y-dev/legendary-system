@@ -292,7 +292,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     result: 'Anti-Counterfeit Verified', 
     description: 'Counterfeiting cost the pharmaceutical industry billions annually, and our client was losing market share in developing countries due to unverified authenticity concerns. We architected a blockchain-based supply chain network that provided immutable proof of product authenticity while maintaining regulatory compliance across 45+ countries. The solution reduced counterfeit incidence by 94% and increased market penetration in high-risk regions.', 
     icon: 'fa-link',
-    image: 'https://images.unsplash.com/photo-1563986768609-7fa38ff12b23?w=400&h=400&fit=crop'
+    image: 'https://images.unsplash.com/photo-1516321318423-f06f70504504?w=400&h=400&fit=crop'
   },
   { 
     id: 'cs12', 

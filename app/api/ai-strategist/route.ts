@@ -45,7 +45,8 @@ Provide your response in a clear, organized format with sections and bullet poin
       },
     });
 
-    const text = response.text;
+    // Extract text from response - the response object structure from GoogleGenAI
+    const text = response.text || response.candidates?.[0]?.content?.parts?.[0]?.text || 'No response generated';
 
     return NextResponse.json({ result: text });
   } catch (error) {

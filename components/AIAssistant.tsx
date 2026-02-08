@@ -1,13 +1,17 @@
 
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const AIAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [response, setResponse] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleGenerate = async () => {
     if (!input.trim()) return;
@@ -112,6 +116,15 @@ const AIAssistant: React.FC = () => {
         aria-label="Toggle AI Assistant"
       >
         <i className={`fas ${isOpen ? 'fa-times' : 'fa-brain'} text-2xl`}></i>
+      </button>
+
+      <button
+        onClick={scrollToTop}
+        className="w-14 h-14 md:w-16 md:h-16 bg-gold text-deepBlue rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 active:scale-95 active:bg-deepBlue active:text-gold border-4 border-white z-50 mt-4"
+        aria-label="Back to top"
+        title="Back to top"
+      >
+        <i className="fas fa-arrow-up text-2xl"></i>
       </button>
     </div>
   );
